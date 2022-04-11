@@ -1,6 +1,6 @@
 const express =require("express")
 const booksRoute =require("./routes/booksRoute")
-
+const logger= require("./middlewares/books.logger")
 
 
 
@@ -8,7 +8,7 @@ const booksRoute =require("./routes/booksRoute")
 const app =express()
 //middleware
 app.use(express.json());
-
+app.use(logger);
 
 app.use(booksRoute)
 
@@ -20,5 +20,5 @@ app.get("/",(req,res)=>{
 const PORT=5000;
 
 app.listen(PORT,()=>{
-console.log("server is working") 
+console.log("server is f*ked up") 
 })
